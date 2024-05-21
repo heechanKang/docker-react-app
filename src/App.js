@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          자동 리로딩 되누씈?
+          Learn react
         </a>
       </header>
     </div>
