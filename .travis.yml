@@ -7,7 +7,7 @@ services:
 
 before_install:
   - echo "start creating an image with dockerfile"
-  - docker build -t uoe326326/dreact-app-travis -f Dockerfile.dev .
+  - docker build -t uoe326326/react-app-travis -f Dockerfile.dev .
 
 script:
   - docker run -e CI=true uoe326326/react-app-travis npm run test -- --coverage
