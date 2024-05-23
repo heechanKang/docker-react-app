@@ -7,19 +7,19 @@ services:
 
 before_install:
   - echo "start creating an image with dockerfile"
-  - docker build -t uoe326326/react-app-travis -f Dockerfile.dev .
+  - docker build -t uoe326326/React-Gh-Travis -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true uoe326326/react-app-travis npm run test -- --coverage
+  - docker run -e CI=true uoe326326/React-Gh-Travis npm run test -- --coverage
 
 deploy:
-  access_key_id: $AWS_ACCES_KEY
-  secret_access_key: $AWS_SECRET_ACCESS_KEY
   provider: elasticbeanstalk
   region: "ap-northeast-2"
-  app: "react-app-travis"
-  env: "React-app-travis-env"
+  app: "React-Gh-Travis"
+  env: "React-Gh-Travis-env"
   bucket_name: "elasticbeanstalk-ap-northeast-2-730335435582"
-  bucket_path: "react-app-travis"
+  bucket_path: "React-Gh-Travis"
   on:
     branch: master
+  access_key_id: $AWS_ACCES_KEY
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
