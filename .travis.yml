@@ -7,10 +7,10 @@ services:
 
 before_install:
   - echo "start creating an image with dockerfile"
-  - docker build -t uoe326326/React-Gh-Travis -f Dockerfile.dev .
+  - docker build -t uoe326326/react-gh-travis -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true uoe326326/React-Gh-Travis npm run test -- --coverage
+  - docker run -e CI=true uoe326326/react-gh-travis npm run test -- --coverage
 
 deploy:
   provider: elasticbeanstalk
